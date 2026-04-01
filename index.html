@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <title>Verb Trainer</title>
   <style>
+
+    button {
+        margin: 5px;
+        padding: 5px;
+        width: 100px;
+        background-color: lightseagreen;
+    }
+
     .hidden {
       display: none;
     }
@@ -12,18 +20,28 @@
     #verbs-table th,
     #verbs-table td
     {
+        text-align: left;
+        font-family: arial, sans-serif;
         border:1px solid black;
         padding: 4px;
     }
+
+    .table-header
+    {
+        background-color: bisque !important;
+    }
+
     .table-label
     {
-        width: 150px;
+        width: 180px;
     }
 
     .table-value
     {
-        min-width: 150px;
+        min-width: 180px;
     }
+
+
 
   </style>
 </head>
@@ -43,10 +61,14 @@
 
   <hr>
 
-  <table id="verbs-table">
+  <table class="table" id="verbs-table">
+    <tr class="table-header">
+        <td class="table-label">Tense</td>
+        <td class="table-value">Verb</td>
+    </tr>
     <tr>
-        <td class="table-label">English</td>
-        <td class="table-value" id="english"></td>
+        <td>English</td>
+        <td id="english"></td>
     </tr>
     <tr>
         <td>JP Present Aff. Inf.</td>
@@ -68,75 +90,7 @@
   <button id="loadBtn">Load verb</button>
   <button id="showBtn">Show</button>
 
-  <script>
-    const englishEl = document.getElementById("english");
-    const jpInfEl = document.getElementById("jp-present-aff-informal");
-    const jpFormEl = document.getElementById("jp-present-aff-formal");
-    const jpTeEl = document.getElementById("jp-te-form");
-
-    const radios = document.getElementsByName("mode");
-
-    function getSelectedMode() {
-      for (let r of radios) {
-        if (r.checked) return r.value;
-      }
-    }
-
-    function updateVisibility() {
-      const mode = getSelectedMode();
-
-      // Hide all first
-      englishEl.classList.add("hidden");
-      jpInfEl.classList.add("hidden");
-      jpFormEl.classList.add("hidden");
-      jpTeEl.classList.add("hidden");
-
-      if (mode === "english") {
-        englishEl.classList.remove("hidden");
-      } else {
-        jpInfEl.classList.remove("hidden");
-      }
-    }
-
-    // Load verb button
-    document.getElementById("loadBtn").addEventListener("click", async () => {
-      try {
-        const response = await fetch("verbs.json");
-        const data = await response.json();
-
-        const verbs = data.verbs;
-        const randomVerb = verbs[Math.floor(Math.random() * verbs.length)];
-
-        // Fill all fields
-        englishEl.textContent = randomVerb["english"];
-        jpInfEl.textContent = randomVerb["jp-present-aff-informal"];
-        jpFormEl.textContent = randomVerb["jp-present-aff-formal"];
-        jpTeEl.textContent = randomVerb["jp-te-form"];
-
-        // Apply visibility based on radio
-        updateVisibility();
-
-      } catch (err) {
-        console.error("Error loading verbs.json:", err);
-      }
-    });
-
-    // Show button
-    document.getElementById("showBtn").addEventListener("click", () => {
-      englishEl.classList.remove("hidden");
-      jpInfEl.classList.remove("hidden");
-      jpFormEl.classList.remove("hidden");
-      jpTeEl.classList.remove("hidden");
-    });
-
-    // Update visibility when radio changes
-    radios.forEach(radio => {
-      radio.addEventListener("change", updateVisibility);
-    });
-
-    // Initial state
-    updateVisibility();
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
