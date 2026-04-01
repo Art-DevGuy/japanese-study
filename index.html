@@ -1,96 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Verb Trainer</title>
-  <style>
+    <meta charset="UTF-8">
+    <title>Verb Trainer</title>
+    <style>
+        button {
+            margin: 5px;
+            padding: 5px;
+            width: 30%;
+            background-color: lightseagreen;
+            font-size: larger;
+        }
 
-    button {
-        margin: 5px;
-        padding: 5px;
-        width: 100px;
-        background-color: lightseagreen;
-    }
+        .hidden {
+            display: none;
+        }
 
-    .hidden {
-      display: none;
-    }
+        #container-base {
+            font-size: xx-large;
+        }
 
-    #verbs-table,
-    #verbs-table th,
-    #verbs-table td
-    {
-        text-align: left;
-        font-family: arial, sans-serif;
-        border:1px solid black;
-        padding: 4px;
-    }
+        #verbs-table {
+            width: 90%;
+        }
 
-    .table-header
-    {
-        background-color: bisque !important;
-    }
+        #verbs-table,
+        #verbs-table th,
+        #verbs-table td {
+            text-align: left;
+            font-family: arial, sans-serif;
+            border: 1px solid black;
+            padding: 4px;
+        }
 
-    .table-label
-    {
-        width: 180px;
-    }
+        .table-header {
+            background-color: bisque !important;
+        }
 
-    .table-value
-    {
-        min-width: 180px;
-    }
+        .table-label {
+            width: 50%;
+        }
 
-
-
-  </style>
+        .table-value {
+            width: 50%;
+        }
+    </style>
 </head>
+
 <body>
 
-  <h2>Verb Trainer</h2>
+    <h1 style="font-size: xxx-large;">Verb Trainer</h1>
 
-  <!-- Radio Group -->
-  <label>
-    <input type="radio" name="mode" value="english" checked>
-    From English
-  </label>
-  <label>
-    <input type="radio" name="mode" value="japanese">
-    From Japanese
-  </label>
+    <div id="container-base">
+        <!-- Radio Group -->
+        <label>
+            <input type="radio" name="mode" value="english" checked>
+            From English
+        </label>
+        <label>
+            <input type="radio" name="mode" value="japanese">
+            From Japanese
+        </label>
 
-  <hr>
+        <hr>
 
-  <table class="table" id="verbs-table">
-    <tr class="table-header">
-        <td class="table-label">Tense</td>
-        <td class="table-value">Verb</td>
-    </tr>
-    <tr>
-        <td>English</td>
-        <td id="english"></td>
-    </tr>
-    <tr>
-        <td>JP Present Aff. Inf.</td>
-        <td id="jp-present-aff-informal"></td>
-    </tr>
-    <tr>
-        <td>JP Present Aff. Form.</td>
-        <td id="jp-present-aff-formal"></td>
-    </tr>
-    <tr>
-        <td>JP TE-form</td>
-        <td id="jp-te-form"></td>
-    </tr>
-  </table>
-  
-  <hr>
+        <table class="table" id="verbs-table">
+            <tr class="table-header">
+                <td class="table-label">Tense</td>
+                <td class="table-value">Verb</td>
+            </tr>
+            <tr>
+                <td>English</td>
+                <td id="english"></td>
+            </tr>
+            <tr>
+                <td>JP Present Aff. Inf.</td>
+                <td id="jp-present-aff-informal"></td>
+            </tr>
+            <tr>
+                <td>JP Present Aff. Form.</td>
+                <td id="jp-present-aff-formal"></td>
+            </tr>
+            <tr>
+                <td>JP TE-form</td>
+                <td id="jp-te-form"></td>
+            </tr>
+        </table>
 
-  <!-- Buttons -->
-  <button id="loadBtn">Load verb</button>
-  <button id="showBtn">Show</button>
+        <hr>
+        <button id="loadBtn">Load verb</button>
+        <button id="showBtn">Show</button>
+    </div>
+    <!-- Buttons -->
 
-  <script src="script.js"></script>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
