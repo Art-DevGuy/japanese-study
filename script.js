@@ -59,6 +59,10 @@ function fillVerb(randomVerb) {
   updateVisibility();
 }
 
+function show_line(id) {
+  document.getElementById(id).classList.remove("hidden");
+}
+
 document.getElementById("loadBtn").addEventListener("click", () => {
   const verbs = getStoredVerbs();
   if (!verbs.length) {
