@@ -22,8 +22,10 @@ function updateVisibility() {
 
   if (mode === "english") {
     englishEl.classList.remove("hidden");
-  } else {
+  } else if (mode === "japanese-base") {
     jpInfEl.classList.remove("hidden");
+  } else if (mode === "japanese-te") {
+    jpTeEl.classList.remove("hidden");
   }
 }
 
