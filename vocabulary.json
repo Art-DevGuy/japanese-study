@@ -1,14 +1,18 @@
 {
   "vocabulary": [
-    { "english": "Hello", "japanese": "Konnichiwa" },
-    { "english": "Goodbye", "japanese": "Sayonara" },
-    { "english": "Thank you", "japanese": "Arigatou" },
-    { "english": "Please", "japanese": "Onegaishimasu" },
-    { "english": "Yes", "japanese": "Hai" },
-    { "english": "No", "japanese": "Iie" },
-    { "english": "Water", "japanese": "Mizu" },
-    { "english": "Food", "japanese": "Tabemono" },
-    { "english": "Book", "japanese": "Hon" },
-    { "english": "School", "japanese": "Gakkou" }
+    { "english": "Monday", "japanese": "getsu-yoobi" },
+    { "english": "Tuesday", "japanese": "ka-yoobi" },
+    { "english": "Wednesday", "japanese": "sui-yoobi" },
+    { "english": "Thursday", "japanese": "moku-yoobi" },
+    { "english": "Friday", "japanese": "kin-yoobi" },
+    { "english": "Saturday", "japanese": "do-yoobi" },
+    { "english": "Sunday", "japanese": "nichi-yoobi" },
+
+    { "english": "This time", "japanese": "Kondo" },
+    { "english": "Now", "japanese": "Ima" },
+    { "english": "Later", "japanese": "Ato de" },
+    { "english": "Before", "japanese": "Mae ni" },
+    { "english": "Soon", "japanese": "Sugu" }
+
   ]
 }
