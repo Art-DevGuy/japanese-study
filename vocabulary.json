@@ -1,0 +1,14 @@
+{
+  "vocabulary": [
+    { "english": "Hello", "japanese": "Konnichiwa" },
+    { "english": "Goodbye", "japanese": "Sayonara" },
+    { "english": "Thank you", "japanese": "Arigatou" },
+    { "english": "Please", "japanese": "Onegaishimasu" },
+    { "english": "Yes", "japanese": "Hai" },
+    { "english": "No", "japanese": "Iie" },
+    { "english": "Water", "japanese": "Mizu" },
+    { "english": "Food", "japanese": "Tabemono" },
+    { "english": "Book", "japanese": "Hon" },
+    { "english": "School", "japanese": "Gakkou" }
+  ]
+}

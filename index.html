@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Verb Trainer</title>
+    <title>Japanese Trainer</title>
     <link rel="icon" type="image/x-icon" href="./japanese-gate.png">
     <style>
         button.btn {
@@ -29,6 +29,11 @@
 
         #container-base {
             font-size: xx-large;
+            width: 100%;
+        }
+
+        #from-lang-rg {
+            font-size: 0.9em;
         }
 
         #verbs-table {
@@ -55,69 +60,140 @@
         .table-value {
             width: 50%;
         }
+
+        .tab-panel {
+            width: 100%;
+        }
+
+        .tab-buttons {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .tab-buttons button {
+            flex: 1;
+            font-size: 1em;
+        }
+
+        .tab-btn {
+            background-color: lightsalmon;
+            padding: 10px;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .tab-btn.active {
+            background-color: lime;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .vocab-item {
+            font-size: 1em;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
     </style>
 </head>
 
 <body>
 
-    <h1 style="font-size: xxx-large;">Verb Trainer</h1>
+    <h1 style="font-size: xxx-large;">Japanese Trainer</h1>
 
     <div id="container-base">
-        <!-- Radio Group -->
-        <label>
-            <input type="radio" name="mode" value="english" checked>
-            From English
-        </label>
-        <label>
-            <input type="radio" name="mode" value="japanese-base">
-            From Japanese (Base form)
-        </label>
-        <label>
-            <input type="radio" name="mode" value="japanese-te">
-            From Japanese (TE-form)
-        </label>
+        <div class="tab-panel">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab('verbs')">Verbs</button>
+                <button class="tab-btn" onclick="openTab('vocabulary')">Vocabulary</button>
+                <button class="tab-btn" onclick="openTab('other')">Other things</button>
+            </div>
+            <div id="verbs" class="tab-content active">
+                <!-- Radio Group -->
+                <div id="from-lang-rg">
+                    <label>
+                        <input type="radio" name="mode" value="english" checked>
+                        From English
+                    </label>
+                    <label>
+                        <input type="radio" name="mode" value="japanese-base">
+                        From Japanese (Base form)
+                    </label>
+                    <label>
+                        <input type="radio" name="mode" value="japanese-te">
+                        From Japanese (TE-form)
+                    </label>
+                </div>
+                <hr>
+                <table class="table" id="verbs-table">
+                    <tr class="table-header">
+                        <td class="table-label">Tense</td>
+                        <td class="table-value">Verb</td>
+                        <td class=""></td>
+                    </tr>
+                    <tr>
+                        <td>English</td>
+                        <td id="english"></td>
+                        <td>
+                            <button class="btn-line" onclick="show_line('english')">Show</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>JP Present Aff. Inf.</td>
+                        <td id="jp-present-aff-informal"></td>
+                        <td>
+                            <button class="btn-line" onclick="show_line('jp-present-aff-informal')">Show</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>JP Present Aff. Form.</td>
+                        <td id="jp-present-aff-formal"></td>
+                        <td>
+                            <button class="btn-line" onclick="show_line('jp-present-aff-formal')">Show</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>JP TE-form</td>
+                        <td id="jp-te-form"></td>
+                        <td>
+                            <button class="btn-line" onclick="show_line('jp-te-form')">Show</button>
+                        </td>
+                    </tr>
+                </table>
 
-        <hr>
-
-        <table class="table" id="verbs-table">
-            <tr class="table-header">
-                <td class="table-label">Tense</td>
-                <td class="table-value">Verb</td>
-                <td class=""></td>
-            </tr>
-            <tr>
-                <td>English</td>
-                <td id="english"></td>
-                <td>
-                    <button class="btn-line" onclick="show_line('english')">Show</button>
-                </td>
-            </tr>
-            <tr>
-                <td>JP Present Aff. Inf.</td>
-                <td id="jp-present-aff-informal"></td>
-                <td>
-                    <button class="btn-line" onclick="show_line('jp-present-aff-informal')">Show</button>
-                </td>
-            </tr>
-            <tr>
-                <td>JP Present Aff. Form.</td>
-                <td id="jp-present-aff-formal"></td>
-                <td>
-                    <button class="btn-line" onclick="show_line('jp-present-aff-formal')">Show</button>
-                </td>
-            </tr>
-            <tr>
-                <td>JP TE-form</td>
-                <td id="jp-te-form"></td>
-                <td>
-                    <button class="btn-line" onclick="show_line('jp-te-form')">Show</button>
-                </td>
-            </tr>
-        </table>
-
-        <hr>
-        <button id="loadBtn" class="btn">Load verb</button>
-        <button id="showBtn" class="btn">Show</button>
+                <hr>
+                <button id="loadBtn" class="btn">Load verb</button>
+                <button id="showBtn" class="btn">Show</button>
+            </div>
+            <div id="vocabulary" class="tab-content">
+                <!-- Radio Group -->
+                <div id="vocab-from-lang-rg">
+                    <label>
+                        <input type="radio" name="vocab-mode" value="english" checked>
+                        From English
+                    </label>
+                    <label>
+                        <input type="radio" name="vocab-mode" value="japanese">
+                        From Japanese
+                    </label>
+                </div>
+                <hr>
+                <div id="vocab-english" class="vocab-item"></div>
+                <div id="vocab-japanese" class="vocab-item"></div>
+                <hr>
+                <button id="loadVocabBtn" class="btn">Load</button>
+                <button id="showVocabBtn" class="btn">Show</button>
+            </div>
+            <div id="other" class="tab-content">
+                <!-- Empty for now -->
+            </div>
+        </div>
     </div>
     <!-- Buttons -->
 
