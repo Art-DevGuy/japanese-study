@@ -1,5 +1,7 @@
 {
   "vocabulary": [
+    { "english": "xxxx", "japanese": "xxxx" },
+
     { "english": "Monday", "japanese": "getsu-yoobi" },
     { "english": "Tuesday", "japanese": "ka-yoobi" },
     { "english": "Wednesday", "japanese": "sui-yoobi" },
@@ -12,7 +14,34 @@
     { "english": "Now", "japanese": "Ima" },
     { "english": "Later", "japanese": "Ato de" },
     { "english": "Before", "japanese": "Mae ni" },
-    { "english": "Soon", "japanese": "Sugu" }
+    { "english": "Soon", "japanese": "Sugu" },
 
+    { "english": "yesterday", "japanese": "kinoo" },
+    { "english": "today", "japanese": "kyoo" },
+    { "english": "tomorrow", "japanese": "ashita" },
+
+    { "english": "Where...?", "japanese": "Doko" },
+    { "english": "Which one...?", "japanese": "Dore" },
+    { "english": "Which [noun]...?", "japanese": "Dono" },
+    { "english": "What kind of...?", "japanese": "Donna" },
+    { "english": "Why...?", "japanese": "Doushite" },
+    { "english": "How...?", "japanese": "Dou" },
+
+    { "english": "This way / This direction", "japanese": "Kochira" },
+    { "english": "This way / This direction (short)", "japanese": "Kochi" },
+    { "english": "That way / Your way", "japanese": "Sochira" },
+    { "english": "That way / Your way (short)", "japanese": "Sochi" },
+    { "english": "That way over there", "japanese": "Achira" },
+    { "english": "That way over there (short)", "japanese": "Achi" },
+    { "english": "Which way? / Where?", "japanese": "Dochira" },
+    { "english": "Which way? / Where? (short)", "japanese": "Dochi" },
+
+    { "english": "First / First of all", "japanese": "Mazu" },
+    { "english": "Next", "japanese": "Tsugi ni" },
+    { "english": "Finally / Lastly", "japanese": "Saigo ni" },
+
+    { "english": "Morning", "japanese": "Asa" },
+    { "english": "Noon / Daytime", "japanese": "Hiru" },
+    { "english": "Evening / Night", "japanese": "Ban / Yoru" }
   ]
 }
